@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 
 const CenteredButton = () =>  (
         <Container>
-            <Row sm={5} className='d-flex justify-content-center' >
-                <Button className='my-5 px-5 py-3' variant='success' size='lg'>
+            <Row sm={4} className='d-flex justify-content-center' >
+                <Button className='my-5' variant='success' size='lg'>
                 Abra sua conta
                 </Button>
             </Row>
