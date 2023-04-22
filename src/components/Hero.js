@@ -11,7 +11,6 @@ import './Hero.scss';
 const Hero = () => {
     return (
         <Card className="text-center text-light hero">
-
             <Container>
                 <Row>
                     <Col lg className="text-lg-end mt-5">
@@ -21,11 +20,9 @@ const Hero = () => {
                     <Col lg className="text-lg-start my-5">
                     <p>Pague suas contas pelo nosso APP</p>
                     <Button variant="outline-light">Abra sua conta</Button>
-                    </Col>
-                    
+                    </Col>  
                 </Row>
             </Container>
-
         </Card>
     )
 }

@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import Navbar from './components/Navgation';
 import Hero from './components/Hero';
 import CenteredButton from './components/CenteredButton';
