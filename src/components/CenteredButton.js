@@ -3,8 +3,8 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
 const CenteredButton = () =>  (
-        <Container>
-            <Row sm={4} className='d-flex justify-content-center' >
+        <Container className='d-flex justify-content-center'>
+            <Row >
                 <Button className='my-5' variant='success' size='lg'>
                 Abra sua conta
                 </Button>
