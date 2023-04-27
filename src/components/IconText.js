@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 
 const IconText = ({icon, children, color, textCLassName, size}) => {
     return (
-        <Row className='d-flex align-items-center'>
+        <Row className='d-flex align-items-center mt-3'>
             <Col xs={size} className='d-flex  justify-content-center'>
                 <FontAwesomeIcon icon={icon} size={`${size}x`} color={color}/>
             </Col>
