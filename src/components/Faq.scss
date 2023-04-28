@@ -7,9 +7,15 @@
 .faq__card {
   background-color: unset;
 }
-
+.faq-icon-text{
+  cursor: pointer;
+}
 .card_header {
   background-color: $color-faq-headers;
+}
+
+.card_body{
+  background-color: $color-faq-background;
 }
 
 .button {
@@ -28,3 +34,7 @@
       font-size: 3.5rem;
     }
   }
+.text_icon{
+  text-align: center;
+  
+}

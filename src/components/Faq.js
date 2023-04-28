@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import {
   Container,
   Row,
@@ -25,115 +26,137 @@ function CustomToggle({ children, eventKey }) {
   );
 
   return (
-    <button
-      className="button"
-      type="button"
-      // style={{ backgroundColor: "#3b2e4a", color:"white"}}
-      onClick={decoratedOnClick}
-    >
+    <button className="button" type="button" onClick={decoratedOnClick}>
       {children}
     </button>
   );
 }
 
 const Faq = () => {
+  const options = [
+    { icon: faCreditCard, text: "Cartão de crédito e débito" },
+    { icon: faWallet, text: "Conta e abertura" },
+    { icon: faShieldAlt, text: "Token digital" },
+    { icon: faUserTie, text: "Produtos e serviços" },
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  const handleClick = (key) => {
+    setIndex(key);
+  };
+
+  useEffect(() => {
+    console.log(index);
+  }, [index]);
+
   return (
     <section className="faq text-light">
       <Container className="py-5">
-     <card className="d-flex justify-content-center">
-     <h2 className="title my-5 ">Dúvidas frequentes</h2>
-     </card>     
+        <card className="d-flex justify-content-center">
+          <h2 className="title my-5 ">Dúvidas frequentes</h2>
+        </card>
         <Row className="d-flex align-items-center justify-items-center">
           <Col className="d-lg-none mb-5" xs={12}>
             <Row>
-              <Col className="d-flex  justify-content-center">
-                <FontAwesomeIcon icon={faCreditCard} size="2x" />
-              </Col>
-              <Col className="d-flex  justify-content-center">
-                <FontAwesomeIcon icon={faWallet} size="2x" />
-              </Col>
-              <Col className="d-flex  justify-content-center">
-                <FontAwesomeIcon icon={faShieldAlt} size="2x" />
-              </Col>
-              <Col className="d-flex  justify-content-center">
-                <FontAwesomeIcon icon={faUserTie} size="2x" />
-              </Col>
+              {options.map(({ icon }, key) => (
+                <Col className="d-flex  justify-content-center" key={key}>
+                  <FontAwesomeIcon
+                    icon={icon}
+                    size="2x"
+                    color={key === index ? '#fff' : '#BBB'}
+                    onClick={() => handleClick(key)}
+                  />
+                </Col>
+              ))}
+            </Row>
+            <Row className="text_icon pt-5">
+            <p className="lead">{options[index].text}</p>
             </Row>
           </Col>
           <Col className="d-none d-lg-block">
-            <IconText icon={faCreditCard} size={3} textCLassName="lead">
-              Cartão de crédito e débito
-            </IconText>
-            <IconText icon={faWallet} size={3} textCLassName="lead">
-              Conta e abertura
-            </IconText>
-            <IconText icon={faShieldAlt} size={3} textCLassName="lead">
-              Token digital
-            </IconText>
-            <IconText icon={faUserTie} size={3} textCLassName="lead">
-              Produtos e serviços
-            </IconText>
+            {options.map(({ icon, text }, key) => (
+              <IconText
+                icon={icon}
+                size={3}
+                className='faq-icon-text mb-3'
+                textCLassName="lead"
+                color={key === index ? '#fff' : '#BBB'}
+                onClick={() => handleClick(key)}
+                key={key}
+              >
+                {text}
+              </IconText>
+            ))}
           </Col>
           <Col>
-            <Accordion defaultActiveKey="0">
-              <Card className="faq__card">
-                <Card.Header className="card_header">
-                  <CustomToggle eventKey="0"> Lorem ipsum dolor sit amet</CustomToggle>
-                </Card.Header>
+            <Accordion defaultActiveKey='0' activeKey={`${index}`}>
+              <Card className="card_header faq__card p-3">
+                <CustomToggle as={Card.Header} eventKey="0">
+                  Lorem ipsum dolor sit amet
+                </CustomToggle>
                 <Accordion.Collapse eventKey="0">
-                  <Card.Body>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  <Card.Body className="card_body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
                     occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.</Card.Body>
+                    deserunt mollit anim id est laborum.
+                  </Card.Body>
                 </Accordion.Collapse>
               </Card>
-              <Card className="faq__card">
-                <Card.Header className="card_header">
-                  <CustomToggle eventKey="1">Nulla porttitor eros ac ex tristique posuere</CustomToggle>
-                </Card.Header>
+              <Card className="card_header faq__card p-3">
+                <CustomToggle as={Card.Header} eventKey="1">
+                  Nulla porttitor eros ac ex tristique posuere
+                </CustomToggle>
                 <Accordion.Collapse eventKey="1">
-                  <Card.Body>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  <Card.Body className="card_body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
                     occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.</Card.Body>
+                    deserunt mollit anim id est laborum.
+                  </Card.Body>
                 </Accordion.Collapse>
               </Card>
-              <Card className="faq__card">
-                <Card.Header className="card_header">
-                  <CustomToggle eventKey="2">Quisque fringilla tincidunt arcu</CustomToggle>
-                </Card.Header>
+              <Card className="card_header faq__card p-3">
+                <CustomToggle as={Card.Header} eventKey="2">
+                  Quisque fringilla tincidunt arcu
+                </CustomToggle>
                 <Accordion.Collapse eventKey="2">
-                  <Card.Body>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  <Card.Body className="card_body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
                     occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.</Card.Body>
+                    deserunt mollit anim id est laborum.
+                  </Card.Body>
                 </Accordion.Collapse>
               </Card>
-              <Card className="faq__card">
-                <Card.Header className="card_header"  >
-                  <CustomToggle eventKey="3">Nam elementum lobortis purus a maximus tortor</CustomToggle>
-                </Card.Header>
+              <Card className="card_header faq__card p-3">
+                <CustomToggle as={Card.Header} eventKey="3">
+                  Nam elementum lobortis purus a maximus tortor
+                </CustomToggle>
                 <Accordion.Collapse eventKey="3">
-                  <Card.Body>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  <Card.Body className="card_body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
                     occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.</Card.Body>
+                    deserunt mollit anim id est laborum.
+                  </Card.Body>
                 </Accordion.Collapse>
               </Card>
             </Accordion>

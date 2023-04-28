@@ -6,7 +6,7 @@ import CreditCard from './components/CreditCard';
 import CardList from './components/CardList';
 import posts from './data/posts';
 import Institutional from './components/Institutional';
-import Faq from './components/Faq';
+import Faq from './components/FAQ';
 
 
 
