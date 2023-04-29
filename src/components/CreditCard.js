@@ -10,7 +10,10 @@ import IconText from "./IconText";
 import creditCard from "../assests/credit-card.jpg";
 import "./CreditCard.scss";
 
-const CreditCard = () => (
+const CreditCard = () => {
+  const handleClick = () =>{}
+
+  return(
   <Container className="my-5">
     <Row>
       <Col xs={12} lg={7} className="mb-5 mb-lg-0 px-5 px-lg-0">
@@ -24,6 +27,7 @@ const CreditCard = () => (
               size={2}
               color="#f05656"
               textClassName="h5 text-muted"
+              onClick={() => handleClick()}
             >
               Crédito Pessoal
             </IconText>
@@ -34,6 +38,7 @@ const CreditCard = () => (
               size={2}
               color="#f05656"
               textClassName="h5 text-muted"
+              onClick={() => handleClick()}
             >
               APP
             </IconText>
@@ -44,6 +49,7 @@ const CreditCard = () => (
               size={2}
               color="#f05656"
               textClassName="h5 text-muted"
+              onClick={() => handleClick()}
             >
               Pagamentos Online
             </IconText>
@@ -54,6 +60,7 @@ const CreditCard = () => (
               size={2}
               color="#f05656"
               textClassName="h5 text-muted"
+              onClick={() => handleClick()}
             >
               Pagamento Digital
             </IconText>
@@ -65,6 +72,6 @@ const CreditCard = () => (
       </Col>
     </Row>
   </Container>
-);
+)};
 
 export default CreditCard;

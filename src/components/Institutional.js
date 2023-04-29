@@ -9,6 +9,9 @@ import {
   } from "@fortawesome/free-solid-svg-icons";
 
 const Institutional = () => {
+
+  const handleClick = () =>{}
+
   return (
     <section className="institutional text-light py-5">
       <Container>
@@ -36,6 +39,8 @@ const Institutional = () => {
               size={2}
               color="#FFF"
               textClassName="h5 text-muted"
+              onClick={() => handleClick()}
+             
             >
               Sem fila e sem burocracia
             </IconText>
@@ -48,6 +53,7 @@ const Institutional = () => {
               size={2}
               color="#FFF"
               textClassName="h5 text-muted"
+              onClick={() => handleClick()}
             >
               Simples e pratico
             </IconText>
@@ -60,6 +66,7 @@ const Institutional = () => {
               size={2}
               color="#FFF"
               textClassName="h5 text-muted"
+              onClick={() => handleClick()}
             >
               Abertura de conta 100% online
             </IconText>
@@ -72,6 +79,7 @@ const Institutional = () => {
               size={2}
               color="#FFF"
               textClassName="h5 text-muted"
+              onClick={() => handleClick()}
             >
               Transações mais seguras
             </IconText>
