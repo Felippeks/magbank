@@ -29,16 +29,16 @@ const Fac = () => {
   return (
     <section className="faq text-light">
       <Container className="py-5">
-        <Row className="justify-content-center">
+        <Row>
           <h2 className="faq-title my-5">Dúvidas frequentes</h2>
         </Row>
         <Row>
-          <Col className="d-lg-none mb-5" xs={12}>
+          <Col className="d-lg-none mb-5 mx-3" xs={11}>
             <Row>
               {options.map(({ icon }, key) => (
                 <Col  key={key}>
                   <IconText
-                  className="d-flex  justify-content-center"
+                  className="d-flex justify-content-center"
                     icon={icon}
                     size={3}
                     color={key === index ? "#fff" : "#BBB"}
