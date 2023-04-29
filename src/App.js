@@ -6,7 +6,8 @@ import CreditCard from './components/CreditCard';
 import CardList from './components/CardList';
 import posts from './data/posts';
 import Institutional from './components/Institutional';
-import Faq from './components/FAQ';
+import Fac from './components/Fac';
+
 
 
 
@@ -20,7 +21,7 @@ function App() {
       <CardList posts={posts}/>
       <CenteredButton/>
       <Institutional/>
-      <Faq/>
+      <Fac/>
     </div>
   );
 }
