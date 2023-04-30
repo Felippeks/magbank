@@ -8,7 +8,7 @@ import {
     faShieldAlt,    
   } from "@fortawesome/free-solid-svg-icons";
 
-const Institutional = () => {
+const Institutional = ({ handleCreateAccount }) => {
 
   const handleClick = () =>{}
 
@@ -85,7 +85,7 @@ const Institutional = () => {
             </IconText>
           </Col>
             </Row>
-            <Button variant='outline-light' className='mt-5'>
+            <Button variant='outline-light' className='mt-5' onClick={() => handleCreateAccount()}>
                 Abra sua conta
             </Button>
           </Col>

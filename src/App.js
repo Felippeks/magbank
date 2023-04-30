@@ -9,6 +9,7 @@ import Institutional from './components/Institutional';
 import Fac from './components/Fac';
 import AccountModal from './components/AccountModal'
 import Footer from './components/Footer';
+import PecaModal from './components/SolicitacaoModal';
 import { useState } from 'react';
 
 
@@ -16,18 +17,21 @@ import { useState } from 'react';
 
 
 function App() {
-  const [ShowModal, setSetShowModal] = useState(false);
+  const [ShowModal, SetShowModal] = useState(false);
+
+  const [SolicitaModal, setSolicitaModal] = useState(false);
 
   return (
     <div className="App">
-      <Navbar handleCreateAccount={() => setSetShowModal(true)}/>
-      <Hero handleCreateAccount={() => setSetShowModal(true)}/>
+      <Navbar handleCreateAccount={() => SetShowModal(true)}/>
+      <Hero handleCreateAccount={() => SetShowModal(true)}/>
       <CreditCard/>
-      <CardList posts={posts}/>
-      <CenteredButton handleCreateAccount={() => setSetShowModal(true)}/>
-      <Institutional/>
+      <CardList posts={posts} handCreateAccount={() => setSolicitaModal(true)}/>
+      <PecaModal show={SolicitaModal} handClose={() => setSolicitaModal(false)}/>
+      <CenteredButton handleCreateAccount={() => SetShowModal(true)}/>
+      <Institutional handleCreateAccount={() => SetShowModal(true)}/>
       <Fac/>
-      <AccountModal show={ShowModal} handleClose={() => setSetShowModal(false)}/>
+      <AccountModal show={ShowModal} handleClose={() => SetShowModal(false)}/>
       <Footer/>
     </div>
   );

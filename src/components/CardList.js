@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 import { useMediaQuery } from 'react-responsive';
 
-const CardList = ({ posts }) => {
+const CardList = ({ posts, handCreateAccount }) => {
   const isMobile = useMediaQuery({ maxWidth: 990 });
   
   return (
@@ -23,7 +23,7 @@ const CardList = ({ posts }) => {
                     <Card.Body>
                       <Card.Title>{title}</Card.Title>
                       <Card.Text>{description}</Card.Text>
-                      <Button variant="danger">{action}</Button>
+                      <Button variant="danger" onClick={() => handCreateAccount()}>{action}</Button>
                     </Card.Body>
                   </Card>
                 </Col>
@@ -41,7 +41,7 @@ const CardList = ({ posts }) => {
                 <Card.Body>
                   <Card.Title>{title}</Card.Title>
                   <Card.Text>{description}</Card.Text>
-                  <Button variant="danger">{action}</Button>
+                  <Button variant="danger" onClick={() => handCreateAccount()}>{action}</Button>
                 </Card.Body>
               </Card>
             </Col>
