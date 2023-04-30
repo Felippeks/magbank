@@ -21,9 +21,9 @@ const Navgation = ({ handleCreateAccount }) => {
           <Nav
             className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll
           >
-            <Nav.Link href="#action1">Cartão</Nav.Link>
-            <Nav.Link href="#action2">Quem somos</Nav.Link>
-            <Nav.Link href="#action3">FAQ</Nav.Link>
+            <Nav.Link href="#Cartão">Cartão</Nav.Link>
+            <Nav.Link href="#Quem somos">Quem somos</Nav.Link>
+            <Nav.Link href="#Faq">FAQ</Nav.Link>
           </Nav>
           <ButtonGroup>
             <Button variant="outline-light">
