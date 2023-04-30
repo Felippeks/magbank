@@ -9,7 +9,7 @@ import './Navgation.scss';
 
 import logo from '../assests/logo.svg';
 
-const Navgation = () => {
+const Navgation = ({ handleCreateAccount }) => {
   return (
     <Navbar  expand="lg">
       <Container>
@@ -36,7 +36,7 @@ const Navgation = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Button>
-            <Button variant="outline-light">
+            <Button variant="outline-light" onClick={() => handleCreateAccount()}>
               Abra sua conta
             </Button>
           </ButtonGroup>
