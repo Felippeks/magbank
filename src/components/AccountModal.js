@@ -24,6 +24,7 @@ const AccountModal = ({ show, handleClose }) => {
               <option value="1">Curitiba - PR</option>
               <option value="2">Florianópolis - SC</option>
               <option value="3">Rio de Janeiro - RJ</option>
+              <option value ="4">Porto Alegre - RS</option>
             </Form.Select>
           </Form.Group>
         </Form>
