@@ -3,12 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Accordion from "react-bootstrap/Accordion";
-import {
-  faCreditCard,
-  faShieldAlt,
-  faUserTie,
-  faWallet,
-} from "@fortawesome/free-solid-svg-icons";
+import {faCreditCard, faShieldAlt, faUserTie,faWallet} from "@fortawesome/free-solid-svg-icons";
 
 import IconText from "./IconText";
 import "./Fac.scss";
@@ -16,7 +11,7 @@ import "./Fac.scss";
 const Fac = () => {
   const [index, setIndex] = useState(0);
   const handleClick = (key) => {
-    setIndex(key);
+    setIndex(key);  
   };
 
   const options = [
@@ -42,8 +37,7 @@ const Fac = () => {
                     icon={icon}
                     size={3}
                     color={key === index ? "#fff" : "#BBB"}
-                    onClick={() => handleClick(key)}
-                  />
+                    onClick={() => handleClick(key)}/>
                 </Col>
               ))}
             </Row>
@@ -51,7 +45,6 @@ const Fac = () => {
               <p className="lead">{options[index].text}</p>
             </Row>
           </Col>
-
           <Col xs={12} lg={6} className="d-none d-lg-block">
             {options.map(({ icon, text }, key) => (
               <IconText
@@ -61,19 +54,13 @@ const Fac = () => {
                 textClassName="lead"
                 color={key === index ? "#fff" : "#bbb"}
                 onClick={() => handleClick(key)}
-                key={key}
-              >
+                key={key}>
                 {text}
               </IconText>
             ))}
           </Col>
-
           <Col xs={12} lg={6}>
-            <Accordion
-              defaultActiveKey="0"
-              activeKey={`${index}`}
-              className="faq-accordion"
-            >
+            <Accordion defaultActiveKey="0" activeKey={`${index}`} className="faq-accordion mb-5">
               <Accordion.Item eventKey="0">
                 <Accordion.Header onClick={() => handleClick(0)}>
                   Cartão de crédito e débito
@@ -84,9 +71,7 @@ const Fac = () => {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                   irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  dolore eu fugiat nulla pariatur. 
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="1">
@@ -99,12 +84,9 @@ const Fac = () => {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                   irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  dolore eu fugiat nulla pariatur. 
                 </Accordion.Body>
               </Accordion.Item>
-
               <Accordion.Item eventKey="2">
                 <Accordion.Header onClick={() => handleClick(2)}>
                   Token digital
@@ -115,12 +97,9 @@ const Fac = () => {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                   irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  dolore eu fugiat nulla pariatur. 
                 </Accordion.Body>
               </Accordion.Item>
-
               <Accordion.Item eventKey="3">
                 <Accordion.Header onClick={() => handleClick(3)}>
                   Produtos e serviços
@@ -131,9 +110,7 @@ const Fac = () => {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                   irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  dolore eu fugiat nulla pariatur.
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>

@@ -33,7 +33,7 @@ const Login = ({ auth }) => {
                 <Form.Control
                   type="text"
                   value={name || ""}
-                  onChange={(event) => setName(event.currentTarget.value)}
+                  onChange={(e) => setName(e.currentTarget.value)}
                 />
               </Form.Group>
 
