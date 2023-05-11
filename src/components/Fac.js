@@ -60,7 +60,7 @@ const Fac = () => {
             ))}
           </Col>
           <Col xs={12} lg={6}>
-            <Accordion defaultActiveKey="0" activeKey={`${index}`} className="faq-accordion mb-5">
+            <Accordion defaultActiveKey="0" activeKey={`${index}`} className="faq-accordion mb-4">
               <Accordion.Item eventKey="0">
                 <Accordion.Header onClick={() => handleClick(0)}>
                   Cartão de crédito e débito
