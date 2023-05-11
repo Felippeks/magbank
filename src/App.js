@@ -34,12 +34,13 @@ function App() {
     <div className="App">
       <Navbar
         handleCreateAccount={() => SetShowModal(true)} logged={isLogged} auth={fakeAuth}/>
+        
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<Login auth={fakeAuth} />}></Route>
         <Route path='/dashboard/*' element={<PrivateRoute Component={Dashboard} logged={isLogged} />} />
-
       </Routes>
+      <Home/>
       <AccountModal show={ShowModal} handleClose={() => SetShowModal(false)} />
       <Footer />
     </div>
