@@ -41,7 +41,7 @@ const Dashboard = ({ className, name, account }) => {
   return (
     <Container className={`dashboard py-5 ${className ? className : ''}`}>
       <Row className='align-items-center mb-5'>
-        <Col xs={1}>
+        <Col xs={4} lg={1}>
           <span className='dashboard__user-avatar'>
             <FontAwesomeIcon icon={faCircle} size='5x' color='#f8f9fa' />
             <FontAwesomeIcon
@@ -52,7 +52,7 @@ const Dashboard = ({ className, name, account }) => {
             />
           </span>
         </Col>
-        <Col xs={11}>
+        <Col xs={8} lg={11}>
           <h4>{name}</h4>
           <p className='text-muted'>{account}</p>
         </Col>
